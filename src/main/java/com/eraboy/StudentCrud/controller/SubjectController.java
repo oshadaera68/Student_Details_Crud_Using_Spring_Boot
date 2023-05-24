@@ -32,7 +32,7 @@ public class SubjectController {
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateSubject(@RequestBody Subject subject) {
         subjectService.updateSubject(subject);
-        return new ResponseUtil(200, "update student", null);
+        return new ResponseUtil(200, "update subject", null);
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

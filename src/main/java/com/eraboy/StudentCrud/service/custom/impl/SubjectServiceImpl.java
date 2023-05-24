@@ -20,7 +20,16 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public void saveSubject(Subject subject) {
+        subjectRepo.save(subject);
+    }
+
+    @Override
+    public void updateSubject(Subject subject) {
+        if (subjectRepo.existsById(subject.getSubCode())) {
             subjectRepo.save(subject);
+        } else {
+            throw new RuntimeException("No such subject to update, Please check the id..");
+        }
     }
 
     @Override
@@ -28,16 +37,7 @@ public class SubjectServiceImpl implements SubjectService {
         if (subjectRepo.existsById(id)) {
             subjectRepo.deleteById(id);
         } else {
-            throw new RuntimeException("No such subject to update, Please check the id..");
-        }
-    }
-
-    @Override
-    public void updateSubject(Subject s) {
-        if (subjectRepo.existsById(s.getSubCode())) {
-            subjectRepo.save(s);
-        } else {
-            throw new RuntimeException("No such subject to update, Please check the id..");
+            throw new RuntimeException("Try again");
         }
     }
 
