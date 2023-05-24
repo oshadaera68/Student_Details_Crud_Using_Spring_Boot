@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
         if (studentRepo.existsById(id)) {
             studentRepo.deleteById(id);
         } else {
-            throw new RuntimeException("Please check the user id..");
+            throw new RuntimeException("Please check the student id..");
         }
     }
 
@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
         if (studentRepo.existsById(student.getId())) {
             studentRepo.save(student);
         } else {
-            throw new RuntimeException("No such user to update, Please check the id..");
+            throw new RuntimeException("No such student to update, Please check the id..");
         }
     }
 
