@@ -1,6 +1,5 @@
 package com.eraboy.StudentCrud.controller;
 
-import com.eraboy.StudentCrud.entity.Student;
 import com.eraboy.StudentCrud.entity.Subject;
 import com.eraboy.StudentCrud.service.custom.SubjectService;
 import com.eraboy.StudentCrud.util.ResponseUtil;
