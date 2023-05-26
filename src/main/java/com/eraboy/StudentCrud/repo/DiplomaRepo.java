@@ -1,4 +1,7 @@
 package com.eraboy.StudentCrud.repo;
 
-public interface DiplomaRepo {
+import com.eraboy.StudentCrud.entity.Diploma;
+import org.springframework.data.repository.CrudRepository;
+
+public interface DiplomaRepo extends CrudRepository<Diploma, Long> {
 }

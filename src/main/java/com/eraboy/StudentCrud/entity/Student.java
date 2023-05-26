@@ -3,6 +3,8 @@ package com.eraboy.StudentCrud.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -16,4 +18,7 @@ public class Student {
     private String name;
     private String address;
     private String telNo;
+
+    @OneToMany(mappedBy = "student")
+    private List<Diploma> diploma;
 }

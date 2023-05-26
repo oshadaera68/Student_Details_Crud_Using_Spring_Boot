@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,4 +21,8 @@ public class Subject {
     @Column(nullable = false)
     private long subCode;
     private String subName;
+
+    @ManyToMany(mappedBy = "subject")
+    private List<Diploma> diploma;
+
 }
