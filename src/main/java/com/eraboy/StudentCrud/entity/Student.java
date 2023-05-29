@@ -1,7 +1,10 @@
 package com.eraboy.StudentCrud.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -19,7 +22,8 @@ public class Student {
     private String address;
     private String telNo;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+
     @Column
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Diploma> diploma;
 }

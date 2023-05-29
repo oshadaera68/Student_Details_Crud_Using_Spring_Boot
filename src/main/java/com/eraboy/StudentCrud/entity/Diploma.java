@@ -26,7 +26,7 @@ public class Diploma {
     @ManyToOne
     private Student student;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "diploma_details", joinColumns = @JoinColumn(name = "diploma_id"), inverseJoinColumns = @JoinColumn(name = "subject_code"))
-    private List<Subject> subject =  new ArrayList<>();
+    private List<Subject> subject = new ArrayList<>();
 }
