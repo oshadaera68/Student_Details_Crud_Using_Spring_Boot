@@ -17,7 +17,7 @@ import java.util.List;
 public class Diploma {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private long id;
     private String name;
     private String duration;

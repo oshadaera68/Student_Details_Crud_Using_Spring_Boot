@@ -13,12 +13,13 @@ import java.util.List;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private Long id;
     private String name;
     private String address;
     private String telNo;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @Column
     private List<Diploma> diploma;
 }

@@ -18,11 +18,11 @@ import java.util.List;
 public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private long subCode;
     private String subName;
 
-    @ManyToMany(mappedBy = "subject")
+    @ManyToMany(mappedBy = "subject", cascade = CascadeType.ALL)
     private List<Diploma> diploma;
 
 }
